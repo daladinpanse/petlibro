@@ -616,6 +616,15 @@ PET_ENTITY_MAP: dict[PL_PetEntity, tuple[PL_PetEntityDescription]] = {
             icon="mdi:emoticon-poop",
             state_class=SensorStateClass.TOTAL_INCREASING,
         ),
+        PL_PetSensorEntityDescription(
+            key="today_bathroom_duration",
+            translation_key="today_bathroom_duration",
+            name="Today's Bathroom Duration",
+            icon="mdi:timer-outline",
+            state_class=SensorStateClass.TOTAL_INCREASING,
+            device_class=SensorDeviceClass.DURATION,
+            native_unit_of_measurement=UnitOfTime.SECONDS,
+        ),
     ),
     PL_PetImageEntity: (
         PL_PetImageEntityDescription(

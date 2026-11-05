@@ -70,7 +70,8 @@ class Pet(Event):
                              "todayFountainDrinkingTime": 0}
         bathroom_stats = {"todayBathroomVisits": 0,
                           "todayBathroomPeeVisits": 0,
-                          "todayBathroomPooVisits": 0}
+                          "todayBathroomPooVisits": 0,
+                          "todayBathroomDuration": 0}
 
         # Collect RFID fountain serial numbers from bound devices and hub devices
         fountain_sns = set()
@@ -121,6 +122,7 @@ class Pet(Event):
                     bathroom_stats["todayBathroomVisits"] += entry.get("times") or 0
                     bathroom_stats["todayBathroomPeeVisits"] += entry.get("peeTimes") or 0
                     bathroom_stats["todayBathroomPooVisits"] += entry.get("poopTimes") or 0
+                    bathroom_stats["todayBathroomDuration"] += entry.get("duration") or 0
                     break
             except Exception:
                 _LOGGER.warning(
@@ -398,3 +400,8 @@ class Pet(Event):
     def today_bathroom_poo_visits(self) -> int:
         """Number of defecation visits recorded by Luma litter boxes today."""
         return self._data.get("todayBathroomPooVisits") or 0
+
+    @property
+    def today_bathroom_duration(self) -> int:
+        """Total seconds spent in Luma litter boxes today."""
+        return self._data.get("todayBathroomDuration") or 0
