@@ -36,6 +36,7 @@ If you enjoy this integration and want to support its development, please consid
 * Air Smart Feeder (PLAF108)
 * Polar Wet Food Feeder (PLAF109)
 * Granary Smart Camera Feeder (PLAF203)
+* Granary 2 Vision (PLAF205)
 * One RFID Smart Feeder (PLAF301)
 
 ### Fountains
