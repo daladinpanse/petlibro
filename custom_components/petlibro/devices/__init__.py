@@ -25,6 +25,7 @@ product_name_map : Dict[str, Type[Device]] = {
     "Granary Smart Camera Feeder": GranarySmartCameraFeeder,
     "Granary 2 Vision": Granary2VisionFeeder,
     "Granary 2": Granary2Feeder,
+    "Granary 2 Vision Duo": Granary2VisionFeeder,
     "One RFID Smart Feeder": OneRFIDSmartFeeder,
     "Polar Wet Food Feeder": PolarWetFoodFeeder,
     "Dockstream Smart Fountain": DockstreamSmartFountain,
